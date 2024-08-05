@@ -3,7 +3,7 @@ properties(
         buildDiscarder(logRotator(numToKeepStr: '20')),
         parameters(
             [
-                string description: 'Enter the username:', name: 'USERNAME'
+                string(name: 'USERNAME', defaultValue: '', description: 'Enter the USNA')
             ]
         )
     ]
