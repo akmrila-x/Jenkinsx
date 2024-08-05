@@ -28,7 +28,7 @@ pipeline {
                 sh '''
                     . /home/oracle/scripts/setEnv.sh
                     sqlplus / as sysdba << EOF
-                    select account_status from dba_users where usermae= '${USERNAME}';
+                    select account_status from dba_users where USERNAME = '${USERNAME}';
                     exit;
                     EOF
                 '''
