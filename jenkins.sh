@@ -23,5 +23,16 @@ pipeline {
                 sh 'echo "DONE"'
             }
         }
+        stage('Verify') {
+            steps {
+                sh '''
+                    . /home/oracle/scripts/setEnv.sh
+                    sqlplus / as sysdba << EOF
+                    select account_status from dba_users where usermae= '${USERNAME}';
+                    exit;
+                    EOF
+                '''
+            }
+        }
     }
 }
