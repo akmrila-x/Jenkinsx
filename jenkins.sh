@@ -1,7 +1,15 @@
+properties(
+    [
+        buildDiscarder(logRotator(numToKeepStr: '20')),
+        parameters(
+            [
+                string description: 'Enter the username:', name: 'USERNAME'
+            ]
+        )
+    ]
+)
+
 pipeline {
-    parameters {
-      string description: 'Enter the username:', name: 'USERNAME'
-    }
     agent any
 
     stages {
