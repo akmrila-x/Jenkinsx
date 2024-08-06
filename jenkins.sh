@@ -36,7 +36,7 @@ pipeline {
                 sh '''
                     . /home/oracle/scripts/setEnv.sh
                     sqlplus / as sysdba << EOF
-                    select profile,account_status from dba_users where USERNAME = upper('${USERNAME}');
+                    select profile,account_status,expiry_date from dba_users where USERNAME = upper('${USERNAME}');
                     exit;
                     EOF
                 '''
