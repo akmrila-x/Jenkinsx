@@ -18,6 +18,7 @@ pipeline {
                 sh 'echo "Hello World"'
                 sh '''
                     echo ${USERNAME}
+                    echo ${WORKSPACE}
                     . /home/oracle/scripts/setEnv.sh
                     sqlplus / as sysdba << EOF
                     alter user ${USERNAME} account unlock;
